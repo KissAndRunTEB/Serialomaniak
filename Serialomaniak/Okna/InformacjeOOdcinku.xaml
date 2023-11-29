@@ -1,0 +1,53 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Serialomaniak" mc:Ignorable="d"
+	x:Class="Serialomaniak.InformacjeOOdcinku"
+	x:Name="okno_informacji_o_odcinku"
+	Title="Informacje o odcinku"
+	Width="700" Height="500" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{DynamicResource Kolor_glowny}" BorderBrush="{DynamicResource Kolor_obramowania}" BorderThickness="1" Icon="Grafika/ikona_programu.ico" Loaded="okno_informacji_o_odcinku_Loaded" AllowsTransparency="True">
+   
+        <Grid x:Name="LayoutRoot">
+        	<Grid.Background>
+        		<ImageBrush ImageSource="Grafika/tlo_drugie.jpg"/>
+        	</Grid.Background>
+		<Grid x:Name="panel_na_informacje_serialowe" Margin="0,0,0,359">
+			<StackPanel Orientation="Horizontal" Height="140" HorizontalAlignment="Left" Width="700">
+				<StackPanel Orientation="Vertical">
+					<Image HorizontalAlignment="Left" Height="109" VerticalAlignment="Top" Source="{Binding ZdjecieMale}"/>
+				</StackPanel>
+				<StackPanel Margin="0" Width="700">
+					<Label Content="{Binding Nazwa, FallbackValue=Nazwa serialu}" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Foreground="White" FontSize="29.333"/>
+
+					<Path Data="M-34,39.5 L627.52721,39.5" Fill="{DynamicResource Kolor_akcentu}" Height="1" Stretch="Fill" Stroke="{DynamicResource Kolor_akcentu}" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left"/>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" VerticalAlignment="Top" MouseDown="StackPanel_MouseDown_1">
+				<Image VerticalAlignment="Top" Source="{Binding ZdjecieDuze}" MinHeight="110"/>
+				<Path Data="M-34,39.5 L627.52721,39.5" Height="1" Stretch="Fill" VerticalAlignment="Top" Margin="0" Stroke="{DynamicResource Kolor_akcentu}"/>
+			</StackPanel>
+		</Grid>
+        <local:ZamknijOkno Margin="653,0,0,453" MouseDown="ZamknijOkno_MouseDown_1"/>
+        <StackPanel Margin="0,448.5,0,0" Orientation="Vertical">
+			<Path Data="M-34,39.5 L627.52721,39.5" Fill="{DynamicResource Kolor_akcentu}" Height="1" Stretch="Fill" Stroke="{DynamicResource Kolor_akcentu}" VerticalAlignment="Top" Opacity="0.145"/>
+			<Button x:Name="przycisk_obejrzyj_teraz" Content="Ok" Height="42" Margin="0,4,0,0" HorizontalAlignment="Center" Width="170" Click="przycisk_obejrzyj_teraz_Click"/>
+		</StackPanel>
+        <StackPanel Margin="10,140,0,0" Orientation="Horizontal" VerticalAlignment="Top" Height="25">			
+        	<TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16" VerticalAlignment="Center" Text="Tytuł odcinka:" Margin="0,-8.78" Opacity="0.5"/>
+            <TextBlock TextWrapping="Wrap" Width="250" Foreground="White" FontSize="16" VerticalAlignment="Center" Text="{Binding Tytul_odcinka, FallbackValue=Tytuł odcinka}" Margin="3,1.86,0,1.86" TextTrimming="CharacterEllipsis"/>
+        	<StackPanel Margin="195,1.86,0,1.86" Orientation="Horizontal">
+        		<TextBlock TextWrapping="Wrap" Foreground="#3FFFFFFF" FontSize="16" VerticalAlignment="Center" Text="{Binding NumerSezonu, FallbackValue=2}" Margin="0,0,3,0"/>
+        		<TextBlock TextWrapping="Wrap" Foreground="#3FFFFFFF" FontSize="16" VerticalAlignment="Center" Text="sezon "/>
+        		<TextBlock TextWrapping="Wrap" Foreground="#3FFFFFFF" FontSize="16" VerticalAlignment="Center" Text="{Binding NumerOdcinka, FallbackValue=7}" Margin="0,0,3,0"/>
+        		<TextBlock TextWrapping="Wrap" Foreground="#3FFFFFFF" FontSize="16" VerticalAlignment="Center" Text="odcinek"/>
+        	</StackPanel>
+        </StackPanel>
+        <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16" VerticalAlignment="Center" Text="Przepraszamy, odcinek na razie nie ma żadnych linków" Opacity="0.5" Margin="0" HorizontalAlignment="Center"/>
+        <ListBox x:Name="pole_lista_linkow"  HorizontalAlignment="Center" Height="227.492" Margin="0,207,0,0" VerticalAlignment="Top" Width="647.441" Background="{DynamicResource Kolor_glowny}" Visibility="Hidden" SelectionChanged="pole_lista_linkow_SelectionChanged" />
+        <DockPanel Margin="10,162,0,0" VerticalAlignment="Top" Height="25">			
+        	<TextBlock TextWrapping="Wrap" Foreground="White" FontSize="16" VerticalAlignment="Center" Opacity="0.5" Margin="0,1.86"><Run Language="pl-pl" Text="Data emisji:"/></TextBlock>
+        	<TextBlock TextWrapping="Wrap" Width="282.5" Foreground="White" FontSize="16" VerticalAlignment="Center" Text="{Binding DataEmisji, Converter={StaticResource konwerter_daty}, FallbackValue=Data emisji}" Margin="3,1.86,0,1.86" TextTrimming="CharacterEllipsis"/>
+        	<CheckBox x:Name="pole_na_oznaczenie" Foreground="{DynamicResource Kolor_akcentu}" Content="Oznacz jako obejrzany" IsChecked="{Binding Obejrzany}" FontSize="16" DockPanel.Dock="Right" Checked="pole_na_oznaczenie_Checked" Loaded="pole_na_oznaczenie_Loaded" HorizontalAlignment="Right" Margin="0,0,17,0" Unchecked="pole_na_oznaczenie_Unchecked"/>
+        </DockPanel>
+	</Grid>
+</Window>

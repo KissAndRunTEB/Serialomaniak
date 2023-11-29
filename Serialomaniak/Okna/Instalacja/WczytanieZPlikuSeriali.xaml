@@ -1,0 +1,20 @@
+﻿<Window x:Class="Serialomaniak.Okna.Instalacja.WczytanieZPlikuSeriali"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Serialomaniak="clr-namespace:Serialomaniak"
+        Title="Wczytanie z pliku seriali" Height="500" Width="700" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="{DynamicResource Kolor_glowny}" ResizeMode="NoResize">
+    <Grid>
+        <Serialomaniak:ZamknijOkno HorizontalAlignment="Left" Height="45" Margin="655,0,0,0" VerticalAlignment="Top" Width="45" MouseDown="ZamknijOkno_MouseDown_1"/>
+    	<Label Content="Wybierz plik z zapisaną listą seriali..." HorizontalAlignment="Left" Height="29" Margin="10,65,0,0" VerticalAlignment="Top" Width="392" Foreground="White"/>
+        <Button x:Name="przycisk_kontynuuj" HorizontalAlignment="Center" Height="40" Margin="266,442,266,0" VerticalAlignment="Top" Width="160" Content="Kontynuuj" Click="przycisk_zaloz_konto_Click" IsEnabled="False"/>
+        <StackPanel Margin="0,0,0,436" Orientation="Vertical">
+        	<Label Content="WCZYTANIE SERIALI" HorizontalAlignment="Left" Height="45" Margin="10,0,0,0" VerticalAlignment="Top" Width="580" Foreground="White" FontSize="29.333"/>
+
+        	<Path Data="M-34,39.5 L627.52721,39.5" Fill="{DynamicResource Kolor_akcentu}" Height="1.138" Stretch="Fill" Stroke="{DynamicResource Kolor_akcentu}" VerticalAlignment="Top" Width="700" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <Button x:Name="przycisk_wczytaj" Content="Wybierz plik" HorizontalAlignment="Left" Height="44.273" Margin="10,99,0,0" VerticalAlignment="Top" Width="216.581" Click="przycisk_wczytaj_Click"/>
+        <ProgressBar x:Name="pasek_postepu" HorizontalAlignment="Center" Height="15.555" Margin="0,240.103,0,0" VerticalAlignment="Top" Width="606.667" Foreground="{DynamicResource Kolor_akcentu}" Visibility="Collapsed"/>
+        <Label x:Name="komunikat_na_blad" Content="Rozpoczynanie" HorizontalAlignment="Left" Height="29" Margin="152,206,0,0" VerticalAlignment="Top" Width="392" Foreground="White" Visibility="Collapsed"/>
+
+    </Grid>
+</Window>

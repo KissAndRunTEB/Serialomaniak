@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{2000E8F4-506A-435D-88C2-F04B65DAD185}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Servila</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>packages\HtmlAgilityPack.1.4.9\lib\Net40-client\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Aktualizacja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\DodajSerial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\InformacjeOOdcinku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\InformacjeOSerialu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Informacji\Informacje.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Informacji\ListaZmian.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Informacji\WyslijSugestie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Instalacja\InstalacjaNowy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Instalacja\InstalacjaStart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Instalacja\InstalacjaSzczegoly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Instalacja\InstalacjaZaloguj.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Instalacja\WczytanieZPlikuSeriali.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\KomunikatOBledzie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Powiadomienie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\PrzyjacieleOkno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\UstawieniaOkno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\ZamknijOkno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Konta\Adresy.cs" />
+    <Compile Include="Konta\Autostart.cs" />
+    <Compile Include="Konta\KanalySeriali.cs" />
+    <Compile Include="Konta\Konwertery\KonwerterDaty.cs" />
+    <Compile Include="Konta\Konwertery\KonwerterStatusu.cs" />
+    <Compile Include="Konta\Profil.cs" />
+    <Compile Include="Konta\Ustawienia.cs" />
+    <Compile Include="Konta\Zmiana.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Aktualizacja.xaml.cs">
+      <DependentUpon>Aktualizacja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\DodajSerial.xaml.cs">
+      <DependentUpon>DodajSerial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\InformacjeOOdcinku.xaml.cs">
+      <DependentUpon>InformacjeOOdcinku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\InformacjeOSerialu.xaml.cs">
+      <DependentUpon>InformacjeOSerialu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Informacji\Informacje.xaml.cs">
+      <DependentUpon>Informacje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Informacji\ListaZmian.xaml.cs">
+      <DependentUpon>ListaZmian.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Informacji\WyslijSugestie.xaml.cs">
+      <DependentUpon>WyslijSugestie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\InstalacjaNowy.xaml.cs">
+      <DependentUpon>InstalacjaNowy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\InstalacjaStart.xaml.cs">
+      <DependentUpon>InstalacjaStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\InstalacjaSzczegoly.xaml.cs">
+      <DependentUpon>InstalacjaSzczegoly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\InstalacjaZaloguj.xaml.cs">
+      <DependentUpon>InstalacjaZaloguj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\WczytanieZPlikuSeriali.xaml.cs">
+      <DependentUpon>WczytanieZPlikuSeriali.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\KomunikatOBledzie.xaml.cs">
+      <DependentUpon>KomunikatOBledzie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Powiadomienie.xaml.cs">
+      <DependentUpon>Powiadomienie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\PrzyjacieleOkno.xaml.cs">
+      <DependentUpon>PrzyjacieleOkno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\UstawieniaOkno.xaml.cs">
+      <DependentUpon>UstawieniaOkno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\ZamknijOkno.xaml.cs">
+      <DependentUpon>ZamknijOkno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Serialowa\Dystrybutorzy\Sidereel.cs" />
+    <Compile Include="Serialowa\Dystrybutorzy\SKASUJStvplus.cs" />
+    <Compile Include="Serialowa\Dystrybutorzy\TvCalendar.cs" />
+    <Compile Include="Serialowa\Dystrybutorzy\Wlasne.cs" />
+    <Compile Include="Serialowa\Emisja\EmisjaOdcinek.cs" />
+    <Compile Include="Serialowa\Emisja\EmisjaSerial.cs" />
+    <Compile Include="Serialowa\Emisja\EmisjaSezon.cs" />
+    <Compile Include="Serialowa\Link.cs" />
+    <Compile Include="Serialowa\ListaSeriali.cs" />
+    <Compile Include="Serialowa\Odcinek.cs" />
+    <Compile Include="Serialowa\Serial.cs" />
+    <Compile Include="Serialowa\Sezon.cs" />
+    <Compile Include="Serialowa\Sortowanie.cs" />
+    <Compile Include="Serialowa\SpisSeriali.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings" />
+    <None Include="Serialomaniak_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Okna\Grafika\aktualizacja.png" />
+    <Content Include="Okna\Grafika\dodaj.png" />
+    <Content Include="Okna\Grafika\ikona_gazeta.png" />
+    <Content Include="Okna\Grafika\ikona_i.png" />
+    <Content Include="Okna\Grafika\ikona_info.png" />
+    <Content Include="Okna\Grafika\ikona_love.png" />
+    <Content Include="Okna\Grafika\ikona_monitor.png" />
+    <Content Include="Okna\Grafika\ikona_programu.ico" />
+    <Content Include="Okna\Grafika\ikona_wyszukiwania.png" />
+    <Content Include="Okna\Grafika\instalacja.png" />
+    <Content Include="Okna\Grafika\logo_programu.png" />
+    <Content Include="Okna\Grafika\polaczenie.png" />
+    <Content Include="Okna\Grafika\polaczenie_z_internetem.png" />
+    <Content Include="Okna\Grafika\strzalka_w_dol.png" />
+    <Content Include="Okna\Grafika\tlo_aplikacji.png" />
+    <Content Include="Okna\Grafika\tlo_drugie.jpg" />
+    <Content Include="Okna\Grafika\ustawienia.png" />
+    <Content Include="Okna\Grafika\zamknij.png" />
+    <Content Include="Okna\wmp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

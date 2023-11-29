@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A38CFD7F-F411-437D-98C0-7DFFC787E7C0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Serialomaniak</RootNamespace>
+    <AssemblyName>Serialomaniak</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>5.2.30810.0</ExpressionBlendVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>ftp://ftp.singit.pl/www/Aplikacje/Serialomaniak/Instalator/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>true</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.singit.pl/Aplikacje/Serialomaniak/Instalator/</InstallUrl>
+    <ProductName>Serialomaniak</ProductName>
+    <PublisherName>Serialomaniak</PublisherName>
+    <SuiteName>Serialomaniak</SuiteName>
+    <MinimumRequiredVersion>1.0.0.90</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>91</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Okna\Grafika\ikona_programu.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>719E5388E24DE27EB952CAF709543BE64F0B1398</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Serialomaniak_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Konta\Autostart.cs" />
+    <Compile Include="Konta\Adresy.cs" />
+    <Compile Include="Konta\KanalySeriali.cs" />
+    <Compile Include="Konta\Konwertery\KonwerterStatusu.cs" />
+    <Compile Include="Konta\Profil.cs" />
+    <Compile Include="Konta\Konwertery\KonwerterDaty.cs" />
+    <Compile Include="Konta\Zmiana.cs" />
+    <Compile Include="Okna\Aktualizacja.xaml.cs">
+      <DependentUpon>Aktualizacja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Informacji\ListaZmian.xaml.cs">
+      <DependentUpon>ListaZmian.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Informacji\WyslijSugestie.xaml.cs">
+      <DependentUpon>WyslijSugestie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\PrzyjacieleOkno.xaml.cs">
+      <DependentUpon>PrzyjacieleOkno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\KomunikatOBledzie.xaml.cs">
+      <DependentUpon>KomunikatOBledzie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\UstawieniaOkno.xaml.cs">
+      <DependentUpon>UstawieniaOkno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Informacji\Informacje.xaml.cs">
+      <DependentUpon>Informacje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\InformacjeOOdcinku.xaml.cs">
+      <DependentUpon>InformacjeOOdcinku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\DodajSerial.xaml.cs">
+      <DependentUpon>DodajSerial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\InformacjeOSerialu.xaml.cs">
+      <DependentUpon>InformacjeOSerialu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\WczytanieZPlikuSeriali.xaml.cs">
+      <DependentUpon>WczytanieZPlikuSeriali.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\InstalacjaSzczegoly.xaml.cs">
+      <DependentUpon>InstalacjaSzczegoly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\InstalacjaNowy.xaml.cs">
+      <DependentUpon>InstalacjaNowy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\InstalacjaStart.xaml.cs">
+      <DependentUpon>InstalacjaStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Instalacja\InstalacjaZaloguj.xaml.cs">
+      <DependentUpon>InstalacjaZaloguj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Powiadomienie.xaml.cs">
+      <DependentUpon>Powiadomienie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Serialowa\Dystrybutorzy\Wlasne.cs" />
+    <Compile Include="Serialowa\Dystrybutorzy\Sidereel.cs" />
+    <Compile Include="Serialowa\Dystrybutorzy\SKASUJStvplus.cs" />
+    <Compile Include="Serialowa\Dystrybutorzy\TvCalendar.cs" />
+    <Compile Include="Serialowa\Emisja\EmisjaOdcinek.cs" />
+    <Compile Include="Serialowa\Emisja\EmisjaSerial.cs" />
+    <Compile Include="Serialowa\Emisja\EmisjaSezon.cs" />
+    <Compile Include="Serialowa\Link.cs" />
+    <Compile Include="Serialowa\ListaSeriali.cs" />
+    <Compile Include="Serialowa\Odcinek.cs" />
+    <Compile Include="Serialowa\Serial.cs" />
+    <Compile Include="Serialowa\Sezon.cs" />
+    <Compile Include="Konta\Ustawienia.cs" />
+    <Compile Include="Serialowa\Sortowanie.cs" />
+    <Compile Include="Serialowa\SpisSeriali.cs" />
+    <Compile Include="Okna\ZamknijOkno.xaml.cs">
+      <DependentUpon>ZamknijOkno.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Okna\Aktualizacja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Informacji\ListaZmian.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Informacji\WyslijSugestie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\PrzyjacieleOkno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\KomunikatOBledzie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\UstawieniaOkno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Informacji\Informacje.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\InformacjeOOdcinku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\DodajSerial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\InformacjeOSerialu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Instalacja\WczytanieZPlikuSeriali.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Instalacja\InstalacjaSzczegoly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Okna\Instalacja\InstalacjaNowy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Instalacja\InstalacjaStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Instalacja\InstalacjaZaloguj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Powiadomienie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\ZamknijOkno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Serialomaniak_TemporaryKey.pfx" />
+    <Resource Include="Okna\Grafika\tlo_aplikacji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteka\Biblioteka.csproj">
+      <Project>{0188c51d-e1db-41f2-8eb3-47a9f97436aa}</Project>
+      <Name>Biblioteka</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\aktualizacja.png" />
+    <Resource Include="Okna\Grafika\instalacja.png" />
+    <Resource Include="Okna\Grafika\polaczenie_z_internetem.png" />
+    <Resource Include="Okna\Grafika\ustawienia.png" />
+    <Resource Include="Okna\Grafika\ikona_wyszukiwania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\ikona_programu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\dodaj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\zamknij.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\ikona_gazeta.png" />
+    <Resource Include="Okna\Grafika\ikona_info.png" />
+    <Resource Include="Okna\Grafika\ikona_love.png" />
+    <Resource Include="Okna\Grafika\ikona_monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\logo_programu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\polaczenie.png" />
+    <Resource Include="Okna\Grafika\ikona_i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\strzalka_w_dol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Okna\Grafika\tlo_drugie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="docs\img\main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="docs\img\episodes.png" />
+    <Resource Include="docs\img\friends.png" />
+    <Resource Include="docs\img\live.png" />
+    <Resource Include="docs\img\recommendation.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
